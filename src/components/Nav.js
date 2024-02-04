@@ -13,7 +13,7 @@ function Nav() {
     <div className={`nav-container ${show && "nav-container-black"}`}>
       <img
         className="nav-logo"
-        src="C:/Users/rodol/OneDrive/Área de Trabalho/Sites/nttflix/src/assets/NTTFLIX.png"
+        src="https://github.com/rodolforsf/nttflix/blob/main/src/assets/NTTFLIX.png?raw=true"
         alt="Netflix"
       ></img>
       <img

@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
-// import ReactPlayer from "react-player";
-// import movieTrailer from "movie-trailer";
+import ReactPlayer from "react-player";
+import movieTrailer from "movie-trailer";
 import { getMovies } from "../api";
+import { Carousel } from 'react-responsive-carousel';
 import "./Row.css";
 
-const imageHost = "https://image.tmdb.org/t/p/w500/";
+const imageHost = "https://image.tmdb.org/t/p/original/";
 function Row({ title, path, isLarge }) {
   const [movies, setMovies] = React.useState([]);
   const [trailerUrl, setTrailerUrl] = React.useState("");
@@ -12,13 +13,13 @@ function Row({ title, path, isLarge }) {
     if (trailerUrl) {
       setTrailerUrl("");
     } else {
-      // movieTrailer(movie.title || movie.name || movie.original_name || "")
-      //   .then((url) => {
-      //     setTrailerUrl(url);
-      //   })
-      //   .catch((error) => {
-      //     console.log("Error fetching movie trailer: ", error);
-      //   });
+      movieTrailer(movie.title || movie.name || movie.original_name || "")
+        .then((url) => {
+          setTrailerUrl(url);
+        })
+        .catch((error) => {
+          console.log("Error fetching movie trailer: ", error);
+        });
     }
   };
 
@@ -54,7 +55,7 @@ function Row({ title, path, isLarge }) {
           );
         })}
       </div>
-      {/* {trailerUrl && <ReactPlayer url={trailerUrl} playing={true} />} */}
+      {trailerUrl && <ReactPlayer url={trailerUrl} playing={true} />}
     </div>
   );
 }
