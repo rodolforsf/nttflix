@@ -26,12 +26,12 @@
   
   .movie-card-large {
     object-fit: contain;
-    width: 100%;
+    width: 108%;
     max-height: 500px;
     margin-bottom: 10px;
     transition: transform 450ms;
   }
   
   .movie-card:hover {
-    transform: scale(1.08);
+    transform: scale(1.0);
   }
