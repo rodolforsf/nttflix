@@ -4,23 +4,22 @@ import React, { useEffect } from "react";
 import { getMovies } from "../api";
 import "./Row.css";
 
-const imageHost = "https://image.tmdb.org/t/p/original/";
+const imageHost = "https://image.tmdb.org/t/p/w500/";
 function Row({ title, path, isLarge }) {
   const [movies, setMovies] = React.useState([]);
   const [trailerUrl, setTrailerUrl] = React.useState("");
   const handleOnClick = (movie) => {
     if (trailerUrl) {
       setTrailerUrl("");
-    } 
-    // else {
-    //   movieTrailer(movie.title || movie.name || movie.original_name || "")
-    //     .then((url) => {
-    //       setTrailerUrl(url);
-    //     })
-    //     .catch((error) => {
-    //       console.log("Error fetching movie trailer: ", error);
-    //     });
-    // }
+    } else {
+      // movieTrailer(movie.title || movie.name || movie.original_name || "")
+      //   .then((url) => {
+      //     setTrailerUrl(url);
+      //   })
+      //   .catch((error) => {
+      //     console.log("Error fetching movie trailer: ", error);
+      //   });
+    }
   };
 
   const fetchMovies = async (_path) => {
