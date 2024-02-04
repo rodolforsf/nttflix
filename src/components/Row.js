@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import ReactPlayer from "react-player";
 import movieTrailer from "movie-trailer";
 import { getMovies } from "../api";
-import { Carousel } from 'react-responsive-carousel';
 import "./Row.css";
 
 const imageHost = "https://image.tmdb.org/t/p/original/";
